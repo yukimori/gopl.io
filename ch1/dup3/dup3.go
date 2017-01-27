@@ -26,17 +26,19 @@ func main() {
 	for _, filename := range os.Args[1:] {
 		// ReadFile : ファイルの内容全体を読み込む．stringに変換されるであろうバイトのスライスに変換
 		data, err := ioutil.ReadFile(filename)
-		fmt.Println(data)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "dup3: %v\n", err)
 			continue
 		}
+		fmt.Println("バイトのスライス")
+		fmt.Println(data)
 		for _, line := range strings.Split(string(data), "\n") {
 			counts[line]++
 			if filenames[line] == nil {
 				filenames[line] = make(map[string]int)
 			}
 			filenames[line][filename]++
+
 		}
 	}
 	for line, n := range counts {
