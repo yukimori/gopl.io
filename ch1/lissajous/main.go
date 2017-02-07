@@ -6,6 +6,11 @@
 //!+main
 
 // Lissajous generates GIF animations of random Lissajous figures.
+
+// 使い方
+// go build -o lissajous main.go
+// ./lissajous > out.gif
+
 package main
 
 import (
