@@ -9,6 +9,7 @@ package main
 
 import "fmt"
 
+// パッケージレベルの宣言
 const boilingF = 212.0
 
 func main() {
